@@ -7,9 +7,9 @@ from selenium.webdriver.common.actions.pointer_input import PointerInput
 
 caps = {}
 caps["platformName"] = "Android"
-caps["appium:platformVershion"] = "11.0"
+caps["appium:platformVersion"] = "11.0"
 caps["appium:deviceName"] = "Android Emulator"
-caps["appium:automationName"] = "Appium"
+caps["appium:automationName"] = "UiAutomator2"
 caps["appium:avd"] = "Pixel_5_API_30"
 caps["appium:udid"] = "emulator-5554"
 caps["appium:ensureWebviewsHavePages"] = True
@@ -18,6 +18,7 @@ caps["appium:newCommandTimeout"] = 3600
 caps["appium:connectHardwareKeyboard"] = True
 
 driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", caps)
-el2 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Phone")
-el2.click()
+
+el1 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Phone")
+el1.click()
 driver.quit()
