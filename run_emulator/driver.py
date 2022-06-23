@@ -5,7 +5,7 @@ from appium.webdriver.appium_service import AppiumService
 
 
 class EmulatorDriver(unittest.TestCase):
-    def __int__(self, driver, appium_service):
+    def __int__(self, driver):
         self.driver = driver
 
     def setUp(self):
@@ -23,8 +23,7 @@ class EmulatorDriver(unittest.TestCase):
         self.appium_service = AppiumService()
         self.appium_service.start()
 
-        driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", self.desired_capabilities)
-        driver.implicitly_wait(5)
+        self.driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", self.desired_capabilities)
 
     def tearDown(self):
         self.driver.close_app()
