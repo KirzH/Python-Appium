@@ -20,13 +20,13 @@ class EmulatorDriver(unittest.TestCase):
             "appPackage": "my.android.calc",
             "appActivity": "my.android.calc.MainActivity"
         }
+
         self.appium_service = AppiumService()
         self.appium_service.start()
-
+        # os.system("taskkill /F /IM node.exe")
         self.driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", self.desired_capabilities)
-        self.driver.implicitly_wait(3)
 
-    def tearDown(self):
-        self.driver.close_app()
-        self.appium_service.stop()
-        os.system("adb -s emulator-5554 emu kill")
+    # def tearDown(self):
+    #     self.driver.close_app()
+    #     self.appium_service.stop()
+    #     os.system("adb -s emulator-5554 emu kill")

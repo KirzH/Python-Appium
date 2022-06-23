@@ -8,6 +8,14 @@ from test.functional.test_helper import wait_for_element
 from .helper.test_helper import APIDEMO_PKG_NAME, BaseTestCase, is_ci
 
 
+# self.size = self.driver.get_window_size()
+        # print(self.size)
+        # width = self.size['width'] / 2
+        # height = self.size['height'] / 2
+        # print(width)
+        # print(height)
+        # self.driver.implicitly_wait(1)
+
 class TestTouchAction(BaseTestCase):
     def test_tap(self) -> None:
         el = self.driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value='Animation')
