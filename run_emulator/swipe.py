@@ -11,7 +11,7 @@ class Swipe(EmulatorDriver):
          - end_y - y-coordinate at which to stop
          - duration - (optional) time to take the swipe, in ms.
         :Usage:
-            driver.swipe(800, 200, 800, 800)
+            self.driver.swipe(800, 200, 800, 800)
         """
         start_x, start_y = begin
         end_x, end_y = end
