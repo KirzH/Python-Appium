@@ -21,13 +21,12 @@ class BaseTests(EmulatorDriver, Swipe):
     def test_swipe(self):
         self.driver.find_element(By.XPATH,
                                  '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.TableLayout/android.widget.TableRow/android.widget.LinearLayout/android.widget.TextView').click()
-        time.sleep(1)
         self.driver.find_element(By.XPATH,
                                  '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[4]').click()
         self.driver.swipe('760', '1900', '760', '500', 2000)
         self.driver.swipe('800', '800', '200', '800')
 
-    def test_swipe_left(self):
+    def test_swipes(self):
         self.driver.find_element(By.XPATH,
                                  '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.TableLayout/android.widget.TableRow/android.widget.LinearLayout/android.widget.TextView').click()
         time.sleep(1)

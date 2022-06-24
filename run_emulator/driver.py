@@ -26,7 +26,7 @@ class EmulatorDriver(unittest.TestCase):
         # os.system("taskkill /F /IM node.exe")
         self.driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", self.desired_capabilities)
 
-    # def tearDown(self):
-    #     self.driver.close_app()
-    #     self.appium_service.stop()
-    #     os.system("adb -s emulator-5554 emu kill")
+    def tearDown(self):
+        self.driver.close_app()
+        self.appium_service.stop()
+        os.system("adb -s emulator-5554 emu kill")
